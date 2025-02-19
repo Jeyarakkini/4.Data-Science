@@ -42,7 +42,7 @@ class Univariate():
             dataset[columnName][dataset[columnName]<descriptive[columnName]['lesserRange']]=descriptive[columnName]['lesserRange']
         for columnName in greater:
             dataset[columnName][dataset[columnName]>descriptive[columnName]['greaterRange']]=descriptive[columnName]['greaterRange']
-        return descriptive
+        return dataset
     def freqTable(columnName,dataset):
         freqTable=pd.DataFrame(columns=['unique_values','frequency','relative_frequency','cumsum'])
         freqTable['unique_values']=dataset[columnName].value_counts().index
